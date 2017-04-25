@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
     before_action :set_blog, only: [:edit, :update, :destroy]
+    before_action :authenticate_user!
 
   def index
     @blogs = Blog.all
@@ -53,6 +54,8 @@ class BlogsController < ApplicationController
     def set_blog
       @blog = Blog.find(params[:id])
     end
+    
+    
     
     
     
