@@ -62,4 +62,5 @@ gem 'cancan'
 gem 'pry-rails'
 
 gem 'better_errors'
-gem 'activeresource' 
+gem 'activeresource'
+gem 'her'
