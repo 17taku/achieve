@@ -62,7 +62,7 @@ gem 'cancan'
 
 gem 'pry-rails'
 
-gem 'better_errors'
+# gem 'better_errors'
 gem 'activeresource'
 gem 'her'
 gem 'omniauth'
