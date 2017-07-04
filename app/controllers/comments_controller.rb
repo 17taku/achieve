@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:edit, :update, :destroy]
+
   def create
 
     @comment = current_user.comments.build(comment_params)
@@ -12,6 +14,13 @@ class CommentsController < ApplicationController
         format.html{render :new}
       end
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @comment.update(comment_params)
   end
 
   def destroy
@@ -29,4 +38,9 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:blog_id, :content)
   end
+
+  def set_comment
+    @comment =  Comment.find(params[:id])
+  end
+
 end
