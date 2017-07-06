@@ -6,8 +6,16 @@ class ApplicationController < ActionController::Base
   # before_actionで下で定義したメソッドを実行
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  #ヘッダーに未読の通知件数を表示
+  before_action :current_notifications, if: :signed_in?
+
   #変数PERMISSIBLE_ATTRIBUTESに配列[:name]を代入
   PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
+
+  #ヘッダーに未読の通知件数を表示
+  def current_notifications
+    @notifications_count = Notification.where(user_id: current_user.id).where(read: false).count
+  end
 
   protected
 
