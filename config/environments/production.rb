@@ -88,6 +88,6 @@ Rails.application.configure do
     authentication: :plain,
     enable_starttls_auto: true
   }
-  config.action_mailer.default_url_options = { host: 'https://guarded-escarpment-43019.herokuapp.com/'}
+  config.action_mailer.default_url_options = { host: 'http://13.114.0.75'}
 
 end
